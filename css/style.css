@@ -1,10 +1,3 @@
-#quiz,
-#finish,
-#Correct,
-#inCorrect {
-    display: none;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../images/Circuit\ Primary.svg);
@@ -19,19 +12,42 @@ body {
     transition: .5s
 }
 
-.w-50 {
-    width: 70% !important;
+section {
+    padding: 3rem;
 }
 
 @media (max-width: 768px) {
-    .w-50 {
-        width: 95% !important;
+    section {
+        padding: 5rem 0rem;
     }
 }
 
 
+#quiz,
+#finish,
+#Correct,
+#inCorrect {
+    display: none;
+}
+
+.holder {
+    width: 70% !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px);
+}
+
+.header {
+    background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .holder {
+        width: 90% !important;
+    }
+}
+
 .text-spec {
-    color: #e42abc;
+    color: #ff00c8;
     font-size: 22px !important;
     font-weight: 700;
 }
@@ -43,8 +59,7 @@ body {
 }
 
 .bg-spec {
-
-    background-color: #e42abc;
+    background-color: #ff00c8;
 }
 
 button {
@@ -53,32 +68,19 @@ button {
 }
 
 button:hover {
-
     background-color: #570746
 }
 
 .alert {
     display: none;
+    color: #570746;
+    font-weight: 900;
 }
 
-section {
-    /* background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../images/Circuit\ Primary.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    height: 100vh; */
-    padding: 3rem;
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 1rem;
-    }
-}
 
 input {
     background-color: transparent !important;
-    color: #e42abc !important;
+    color: #f28fff !important;
     font-weight: 600 !important;
 }
 
@@ -87,33 +89,28 @@ input:focus::placeholder {
 }
 
 select {
-    background: rgba(0, 0, 0, .95) !important;
-    backdrop-filter: blur(3px) !important;
-    color: #ac148b !important;
+    background-color: rgba(0, 0, 0, .95) !important;
+    color: #f28fff !important;
     font-weight: 600 !important;
     transition: .5s;
 }
 
-.bg-white,
-.bg-light {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)) !important;
-    backdrop-filter: blur(3px);
-}
-
-
-.form-check-label {
-    color: #ac148b !important;
-    font-size: 18px !important;
+.pretty label {
+    color: #b1aeb1 !important;
+    font-size: 16px !important;
     font-weight: 600;
 }
 
-@media (max-width: 768px) {
-    .form-check-label {
-        font-size: 16px !important;
-    }
+.pretty .state label:after,
+.pretty .state label:before {
+    top: 2px !important
 }
 
 .form-control:focus {
     box-shadow: 0 0 0 0.2rem #7d0463df !important;
     border-color: hsla(278, 77%, 61%, 0.491) !important;
+}
+
+#totalNumberOfQuestions {
+    font-weight: 700;
 }

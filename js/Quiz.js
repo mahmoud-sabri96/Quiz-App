@@ -39,8 +39,6 @@ export default class Quiz {
     }
 
 
-
-
     // ======>>>> implementaion of function Which Showing the current question and  answer <<<<======
     showQuestion() {
         document.getElementById("question").innerHTML = this.questions[this.currQuestion].question;
@@ -53,10 +51,22 @@ export default class Quiz {
         // console.log(randomAnswer)
         let answerRow = '';
         for (let i = 0; i < answers.length; i++) {
-            answerRow += `<label class="form-check-label">
-            <input type="radio" class="form-check-input" name="answer"  value='${answers[i]}'>
-            ${answers[i]}
-        </label>`
+            //     answerRow += `
+            //     <label class="form-check-label">
+            //     <input type="radio" class="form-check-input" name="answer"  value='${answers[i]}'>
+            //     ${answers[i]}
+            // </label>
+            // `
+            answerRow +=
+                `
+        <div class="pretty mb-2 p-default p-curve" >
+            <input type="radio" name="answer"  value='${answers[i]}' checked>
+            <div class="state p-info-o">
+                <label> ${answers[i]}</label>
+            </div>
+        </div>
+    `
+
         }
         document.getElementById("rowAnswer").innerHTML = answerRow;
     }
@@ -65,6 +75,7 @@ export default class Quiz {
 
     // ======>>>> implementaion of function Which Showing  question 
     nextQuesiton() {
+
         if (Array.from(document.getElementsByName("answer")).filter(el => el.checked).length != 0) {
             $("#alert").fadeOut(500)
             let userAnswer = Array.from(document.getElementsByName("answer")).find(el => el.checked).value;

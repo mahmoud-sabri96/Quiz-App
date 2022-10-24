@@ -6,11 +6,6 @@ export class Settings {
 
     //owel 7aga bt4t3`l hya elly gowa el-constructor
     constructor() {
-        // let categoryElement = document.getElementById("category");
-        // let difficultyElement = document.getElementsByName("difficulty");
-        // let numberOfQuestions = document.getElementById("numberOfQuestions");
-        // // console.log(categoryElement)
-
         // get dom element
         this.categoryElement = document.getElementById("category");
         this.difficultyElement = document.getElementsByName("difficulty");

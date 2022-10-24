@@ -1,19 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <!-- /// <reference path="../typings/globals/jquery/index.d.ts" />
  -->
 
 <head>
-    <title>Workshop 3</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Quiz-App</title>
+
 </head>
 
-<body >
+<body>
 
-    <!-- ========================>>>> Start Setting Feature<<<<====================== -->
+    <!-- ========================>>>> Start Setting Phase<<<<====================== -->
     <section id="setting">
-        <div class="bg-white overflow-auto w-50 m-auto shadow-lg  rounded-lg">
+
+        <div class="bg-white holder overflow-auto rounded-lg m-auto ">
             <h1 class="text-center text-spec py-5  border-bottom">Setting Your Quiz</h1>
             <div class="p-4">
                 <div class="form-group">
@@ -27,34 +34,34 @@
                         <option value="18">Science: Computers</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="difficulty" class="text-spec"> Difficulty</label>
-                    <div class="form-check" id="difficulty">
+                <div class="form-group d-flex flex-column">
+                    <label for="difficulty" class="text-spec "> Difficulty</label>
 
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="difficulty" id="easy" value="easy"
-                                checked>
-                            Easy
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="difficulty" id="medium" value="medium">
-                            Medium
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="difficulty" id="hard" value="hard">
-                            Hard
-                        </label>
+                    <div class="pretty mb-2 p-default p-curve" id="difficulty">
+                        <input type="radio" name="difficulty" id="easy" value="easy" checked>
+                        <div class="state p-info-o">
+                            <label>Easy</label>
+                        </div>
                     </div>
 
+                    <div class="pretty mb-2 p-default p-curve" id="difficulty">
+                        <input type="radio" name="difficulty" id="easy" value="medium" checked>
+                        <div class="state p-info-o">
+                            <label>Medium</label>
+                        </div>
+                    </div>
+
+                    <div class="pretty mb-2 p-default p-curve" id="difficulty">
+                        <input type="radio" name="difficulty" id="easy" value="hard" checked>
+                        <div class="state p-info-o">
+                            <label>Hard</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input type="number" class="form-control" name="" id="numberOfQuestions" aria-describedby="helpId"
                         placeholder="Number Of questions" required>
-                    <div id="alertApi" class="alert alert-danger mt-3">Please Enter no of Questions</div>
+                    <div id="alertApi" class="alert alert-warning mt-3">Please Enter no of Questions !!</div>
                 </div>
                 <button id="startBtn"
                     class="btn float-right py-2 px-4 bg-spec rounded-pill text-white my-4">Start</button>
@@ -63,11 +70,11 @@
     </section>
 
 
-    <!-- ========================>>>> Start Quiz Feature<<<<====================== -->
+    <!-- ========================>>>> Start Quiz Phase<<<<====================== -->
 
-    <section id="quiz" >
-        <div class="bg-white w-50 m-auto shadow-lg rounded-lg  overflow-auto">
-            <div class="p-3 bg-light border-bottom overflow-auto">
+    <section id="quiz">
+        <div class="bg-white holder  m-auto rounded-lg  overflow-auto">
+            <div class="p-3 bg-light header border-bottom overflow-auto">
                 <h1 class="text-spec text-center">Quiz</h1>
                 <span class="float-right bg-spec rounded-pill text-white p-2 "><span id="currentQuestion"></span> Of
                     <span id="totalNumberOfQuestions"></span> Question</span>
@@ -79,28 +86,26 @@
             </div>
 
             <div class="p-4 text-spec">
-                <h5 class="d-inline">Q: </h5>
-                <h5 id="question" class="d-inline"></h5>
+                <h5 class="d-inline ">Q: </h5>
+                <h5 id="question" class="d-inline "></h5>
                 <div id="rowAnswer" class="d-flex flex-column p-4"></div>
-                <div id="alert" class="alert alert-danger mt-3">Please Choose Your Answer</div>
+                <div id="alert" class="alert alert-warning mt-3">Please Choose Your Answer !!</div>
                 <button class="btn float-right py-2 px-4 bg-spec rounded-pill text-white my-4" id="next">Submit</button>
             </div>
         </div>
     </section>
 
 
-    <!-- ========================>>>> Start Finish Feature<<<<====================== -->
-
+    <!-- ========================>>>> Start Finish Phase <<<<====================== -->
     <section id="finish">
-        <div class="bg-white w-50 m-auto shadow-lg rounded overflow-auto text-center">
-            <h1 class=" text-spec py-5 bg-light border-bottom">fininsh</h1>
+        <div class="bg-white holder  m-auto  rounded overflow-auto text-center">
+            <h1 class=" text-spec py-5 bg-light header border-bottom">fininsh</h1>
             <div class="p-4">
                 <h5 class=" text-spec">Your Score</h5>
                 <div class="scoreOutput d-flex justify-content-center ">
                     <h4 class="text-spec" id="score"></h4>
                     <h4 class="text-spec px-2"> Of<span class="numOfQuestions text-spec px-2"></span></h4>
                 </div>
-
                 <button class="btn float-right py-2 px-4 bg-spec rounded-pill text-white my-4" id="tryBtn">Try
                     Again?</button>
             </div>
