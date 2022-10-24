@@ -1,10 +1,28 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../images/Circuit\ Primary.svg);
+    /* background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../images/Circuit\ Primary.svg); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-position: 100% 100%; */
+    /* height: 100vh; */
+}
+
+#particles-js {
+    width: 100%;
+    /* background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../images/Circuit\ Primary.svg); */
+    background-color: rgb(13, 0, 20);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 100% 100%;
-    height: 100vh;
+    height: 99vh;
+}
+
+.con {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 75%;
+    transform: translateX(-50%);
 }
 
 ::placeholder {
@@ -12,13 +30,10 @@ body {
     transition: .5s
 }
 
-section {
-    padding: 3rem;
-}
 
 @media (max-width: 768px) {
-    section {
-        padding: 5rem 0rem;
+    .con {
+        width: 95% !important;
     }
 }
 
@@ -31,9 +46,11 @@ section {
 }
 
 .holder {
-    width: 70% !important;
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
     backdrop-filter: blur(3px);
+    border: 1px solid #111;
+    border-radius: 20px !important;
 }
 
 .header {
@@ -47,7 +64,8 @@ section {
 }
 
 .text-spec {
-    color: #ff00c8;
+    /* color: #a60583; */
+    color: #fd94dc;
     font-size: 22px !important;
     font-weight: 700;
 }
@@ -59,7 +77,7 @@ section {
 }
 
 .bg-spec {
-    background-color: #ff00c8;
+    background-color: #a60583;
 }
 
 button {
@@ -73,7 +91,7 @@ button:hover {
 
 .alert {
     display: none;
-    color: #570746;
+    color: #5f024b;
     font-weight: 900;
 }
 
@@ -82,6 +100,11 @@ input {
     background-color: transparent !important;
     color: #f28fff !important;
     font-weight: 600 !important;
+    transition: .5s;
+}
+
+input:focus {
+    transform: scale(1.01);
 }
 
 input:focus::placeholder {

@@ -60,7 +60,7 @@ export default class Quiz {
             answerRow +=
                 `
         <div class="pretty mb-2 p-default p-curve" >
-            <input type="radio" name="answer"  value='${answers[i]}' checked>
+            <input type="radio" name="answer"  value='${answers[i]}'>
             <div class="state p-info-o">
                 <label> ${answers[i]}</label>
             </div>
